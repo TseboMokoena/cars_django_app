@@ -54,7 +54,7 @@ function rebuild_virtualenv() {
     CD=$(pwd)
     cd $PROJ_BASE
 
-    deactivate
+    source deactivate
     rm -rf .cars_env
 
     pyenv install --skip-existing
