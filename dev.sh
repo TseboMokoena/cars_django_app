@@ -14,37 +14,42 @@ cd $CD
 alias manage='python $PROJ_BASE/manage.py'
 
 function devhelp {
-    echo -e "${GREEN}devhelp${RESTORE}              Prints this ${RED}help${RESTORE}"
+    echo -e "${GREEN}devhelp${RESTORE}                      Prints this ${RED}help${RESTORE}"
     echo -e ""
-    echo -e "${GREEN}migrate${RESTORE}              Run migrations"
+    echo -e "${GREEN}migrate${RESTORE}                      Run migrations"
     echo -e ""
-    echo -e "${GREEN}make_migrations${RESTORE}       Make migrations"
+    echo -e "${GREEN}make_migrations${RESTORE}              Make migrations"
     echo -e ""
-    echo -e "${GREEN}runserver${RESTORE}            Runs the django server"
+    echo -e "${GREEN}runserver${RESTORE}                    Runs the django server"
     echo -e ""
-    echo -e "${GREEN}rebuild_virtualenv${RESTORE}   Rebuild virtualenv for this project"
+    echo -e "${GREEN}rebuild_virtualenv${RESTORE}           Rebuild virtualenv for this project"
+    echo -e ""
+    echo -e "${GREEN}import_data <file path>${RESTORE}      Import data from json file into database"
     echo -e ""
 }
 
-function migrate {
+function migrate() {
     CD=$(pwd)
     cd $PROJ_BASE
     ./manage.py migrate
-    exitcode=$?manage.pymanage.pymanage.py
     cd $CD
-    return $exitcode
 }
 
-function make_migrations {
+function make_migrations() {
     CD=$(pwd)
     cd $PROJ_BASE
     ./manage.py makemigrations
-    exitcode=$?manage.pymanage.pymanage.py
     cd $CD
-    return $exitcode
 }
 
-function runserver {
+function import_data() {
+    CD=$(pwd)
+    cd $PROJ_BASE
+    ./manage.py loaddata $@
+    cd $CD
+}
+
+function runserver() {
     CD=$(pwd)
     cd $PROJ_BASE
     ./manage.py runserver

@@ -14,10 +14,10 @@ class Category(models.Model):
         return self.name
 
 
-class Colours(models.Model):
+class Colour(models.Model):
     name = models.CharField(max_length=100)
     category = models.ForeignKey(
-        Category, related_name='colours', on_delete=models.CASCADE)
+        Category, related_name='colour', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
