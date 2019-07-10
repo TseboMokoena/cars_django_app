@@ -100,7 +100,7 @@ function echo_yellow {
     echo -e "${YELLOW}$1${RESTORE}";
 }
 
-
+. git_aliases.sh
 _create_git_aliases
 _copy_git_hooks
 
