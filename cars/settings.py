@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'colours.apps.ColoursConfig'
+    'Vehicle.apps.VehicleConfig',
+    'graphene_django'
 ]
 
 MIDDLEWARE = [
@@ -84,20 +85,16 @@ DATABASES = {
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
+V = 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'
+V2 = 'django.contrib.auth.password_validation.MinimumLengthValidator'
+V3 = 'django.contrib.auth.password_validation.CommonPasswordValidator'
+V4 = 'django.contrib.auth.password_validation.NumericPasswordValidator'
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME': V, },
+    {'NAME': V2, },
+    {'NAME': V3, },
+    {'NAME': V4, },
 ]
 
 
@@ -119,3 +116,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+GRAPHENE = {
+    'SCHEMA': 'cars.schema.schema'
+}

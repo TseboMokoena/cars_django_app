@@ -1,0 +1,8 @@
+[{"model": "Vehicle.colour", "pk": 1, "fields": {"name": "White"}},
+  {"model": "Vehicle.colour", "pk": 2, "fields": {"name": "Black"}},
+  {"model": "Vehicle.colour", "pk": 3, "fields": {"name": "Blue"}},
+  {"model": "Vehicle.vehicle", "pk": 1, "fields": {"name": "VW", "colour": 1}},
+  {"model": "Vehicle.vehicle", "pk": 2, "fields": {"name": "BMW", "colour": 1}},
+  {"model": "Vehicle.vehicle", "pk": 3, "fields": {"name": "Mercedes", "colour": 2}},
+  {"model": "Vehicle.vehicle", "pk": 4, "fields": {"name": "Ford", "colour": 3}}
+]

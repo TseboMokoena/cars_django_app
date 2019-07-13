@@ -81,13 +81,6 @@ function _create_git_aliases() {
     git config alias.hist "log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
 }
 
-function _copy_git_hooks {
-    rm -f .git/hooks/commit-msg
-    rm -f .git/hooks/pre-commit  && cp ci/pre-commit .git/hooks/pre-commit
-    rm -f .git/hooks/pre-commit-main.py && cp ci/pre-commit-main.py .git/hooks/pre-commit-main.py
-    rm -f .git/hooks/prepare-commit-msg && cp ci/prepare-commit-msg .git/hooks
-}
-
 function echo_red {
     echo -e "\e[31m$1\e[0m";
 }
@@ -102,7 +95,6 @@ function echo_yellow {
 
 . git_aliases.sh
 _create_git_aliases
-_copy_git_hooks
 
 
 PYTHON_VERSION=`cat ./.python-version`

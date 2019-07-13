@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 alias currentbranch='git rev-parse --abbrev-ref HEAD'
 f_setup() {
     git branch master --quiet --set-upstream-to origin/master
