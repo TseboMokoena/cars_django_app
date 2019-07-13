@@ -23,6 +23,7 @@ How to get started:
  5. Once your server is running head to http://127.0.0.1:8000/graphql/
 
  6. Type the following to make a query: 
+    ```
     { allVehicles
       {
         id, name, 
@@ -31,5 +32,6 @@ How to get started:
         }
       }
     }
+    ```
 
 See basic tutorial here : https://docs.graphene-python.org/projects/django/en/latest/tutorial-plain/#
